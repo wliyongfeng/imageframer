@@ -28,12 +28,13 @@
 			}).insertAfter($img);
 		},
 
-		destroy: function() {
+		destroy: function(imgHeight) {
 			var $divElement = $(this.element),
-			var $img = $divElement.children("img");
+			$img = $divElement.children("img");
 			$divElement.children("span").remove();
-			$divElement.css({"border":"", "width": $img.width});
-		}
+			$divElement.css({"border":"", "display":"", "width":imgHeight});
+			$img.css("width", imgHeight);
+		},
 				
 	});
 })(jQuery);
