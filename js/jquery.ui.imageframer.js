@@ -27,6 +27,13 @@
 				display:"block"
 			}).insertAfter($img);
 		},
+
+		destroy: function() {
+			var $divElement = $(this.element),
+			var $img = $divElement.children("img");
+			$divElement.children("span").remove();
+			$divElement.css({"border":"", "width": $img.width});
+		}
 				
 	});
 })(jQuery);
